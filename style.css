@@ -63,12 +63,9 @@ span {
   
   .key__delete {
     width: 100px;
+    background: var(--peach);
   }
-  
-/*   .key__oneandhalf {
-    width: 75px;
-  }
-   */
+
   .key__esc {
     background: var(--peach);
     line-height: 28px;
@@ -101,3 +98,18 @@ span {
   .feather {
     margin-top: 10px;
   }
+
+  .key:hover {
+      background-color: #A2CCB6;
+      font-weight: 600;
+  }
+
+  .textarea {
+    display: block;
+    width: 700px;
+    height: 200px;
+    margin: 10px auto 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: #444444;
+}

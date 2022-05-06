@@ -1,4 +1,4 @@
-const engLocation = {
+export const engLocation = {
     '`': {
         default: '`',
         shift: '`',
@@ -34,7 +34,6 @@ const engLocation = {
         shift: '^',
         shiftCaps: '^'
     },
-
     'Digit7': {
         default: '7',
         shift: '&',
@@ -50,7 +49,6 @@ const engLocation = {
         shift: '(',
         shiftCaps: '('
     },
-
     'Digit0': {
         default: '0',
         shift: ')',
@@ -340,7 +338,7 @@ const engLocation = {
     }
 };
 
-const rusLocation = {
+export const rusLocation = {
     // first line rus =============== rus ============================
     'Backquote': {
         default: 'ё',
