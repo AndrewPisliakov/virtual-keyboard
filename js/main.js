@@ -43,6 +43,7 @@ for (let key in engLocation) {
         let row = document.getElementById('01');
         let div = document.createElement('div');
         div.classList.add('key');
+        div.setAttribute('id', key);
         div.innerHTML = engLocation[key].default;
 
         if (div.innerHTML === 'Backspace') {
@@ -59,6 +60,7 @@ for (let key in engLocation) {
         let row = document.getElementById('02');
         let div = document.createElement('div');
         div.classList.add('key');
+        div.setAttribute('id', key);
         div.innerHTML = engLocation[key].default;
 
         if (div.innerHTML === 'Tab') {
@@ -76,6 +78,7 @@ for (let key in engLocation) {
         let row = document.getElementById('03');
         let div = document.createElement('div');
         div.classList.add('key');
+        div.setAttribute('id', key);
         div.innerHTML = engLocation[key].default;
 
         if (div.innerHTML === 'CapsLock') {
@@ -96,6 +99,7 @@ for (let key in engLocation) {
         let row = document.getElementById('04');
         let div = document.createElement('div');
         div.classList.add('key');
+        div.setAttribute('id', key);
         div.innerHTML = engLocation[key].default;
 
         if (key === 'ShiftLeft' || key === 'ShiftRight') {
@@ -117,6 +121,7 @@ for (let key in engLocation) {
         let row = document.getElementById('05');
         let div = document.createElement('div');
         div.classList.add('key');
+        div.setAttribute('id', key);
         div.innerHTML = engLocation[key].default;
 
         if (key === 'ControlLeft') {
@@ -159,3 +164,6 @@ function createRow(id) {
     keyboard.append(row);
 }
 
+keyboard.addEventListener('click', function(e){
+    console.log(e.target);
+});
