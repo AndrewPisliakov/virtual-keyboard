@@ -222,11 +222,11 @@ export const engLocation = {
         shift: 'Shift',
         shiftCaps: 'Shift'
     },
-    'IntlBackslash': {
+/*     'IntlBackslash': {
         default: '\\',
         shift: '|',
         shiftCaps: '|'
-    },
+    }, */
     'KeyZ': {
         default: 'z',
         shift: 'Z',
