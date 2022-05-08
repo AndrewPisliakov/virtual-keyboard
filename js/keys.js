@@ -1,5 +1,5 @@
 export const engLocation = {
-    '`': {
+    'Backquote': {
         default: '`',
         shift: '`',
         shiftCaps: '`',
@@ -242,7 +242,7 @@ export const engLocation = {
         shift: 'C',
         shiftCaps: 'c'
     },
-    'ф': {
+    'KeyV': {
         default: 'v',
         shift: 'V',
         shiftCaps: 'v'

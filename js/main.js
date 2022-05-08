@@ -164,12 +164,41 @@ function createRow(id) {
     keyboard.append(row);
 }
 
-function reRender(lang) {
-    let listKey = document.querySelector('#id');
-    console.log(listKey);
+
+//===================== function rerender ===================
+
+function reRender(langLocation) {
+    let listKey = document.querySelectorAll('.key');
+
+    listKey.forEach((elem) => {
+        let keyCode = elem.id;
+        elem.innerHTML = langLocation[keyCode].default;
+
+        if (keyCode === 'ArrowUp') {
+            elem.innerHTML = '&uarr;'
+        }
+        if (keyCode === 'ArrowLeft') {
+
+            elem.innerHTML = '&larr;'
+        }
+        if (keyCode === 'ArrowDown') {
+            elem.innerHTML = '&darr;'
+        }
+        if (keyCode === 'ArrowRight') {
+            elem.innerHTML = '&rarr;'
+        }
+        if (keyCode === 'ControlRight') {
+            elem.innerHTML = 'Ctrl';
+        }
+        if (keyCode === 'ControlLeft') {
+            elem.innerHTML = 'Ctrl';
+        }
+    });
 }
 
-reRender();
+reRender(rusLocation);
+
+
 
 // hover mouse
 
@@ -191,11 +220,12 @@ keyboard.addEventListener('mouseout', function (e) {
 window.addEventListener('keydown', function (e) {
     texarea.autofocus = true;
     let realKey = e.code;
-    console.log(realKey);
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
-    console.log(virtualKeyboardKey);
-    
-    virtualKeyboardKey.classList.add('active');
+
+    if (e.target.classList.contains('key')) {
+        virtualKeyboardKey.classList.add('active');
+    }
+
 });
 
 window.addEventListener('keyup', function (e) {
@@ -203,7 +233,7 @@ window.addEventListener('keyup', function (e) {
     console.log(realKey);
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
     console.log(virtualKeyboardKey);
-    
+
     virtualKeyboardKey.classList.toggle('active');
 });
 
