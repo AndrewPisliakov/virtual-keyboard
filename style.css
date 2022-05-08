@@ -99,11 +99,6 @@ span {
     margin-top: 10px;
   }
 
-  .key:hover {
-      background-color: #A2CCB6;
-      font-weight: 600;
-  }
-
   .textarea {
     display: block;
     width: 700px;
@@ -112,4 +107,11 @@ span {
     padding: 10px;
     font-size: 18px;
     color: #444444;
+}
+
+.active {
+  border-radius: 15px;
+  font-weight: 600;
+  background: var(--peach);
+  /* color: var(--yellow); */
 }

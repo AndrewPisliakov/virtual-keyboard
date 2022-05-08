@@ -242,7 +242,7 @@ export const engLocation = {
         shift: 'C',
         shiftCaps: 'c'
     },
-    'KeyV': {
+    'ф': {
         default: 'v',
         shift: 'V',
         shiftCaps: 'v'
