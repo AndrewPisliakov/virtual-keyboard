@@ -27,7 +27,7 @@ body.insertBefore(texarea, keyboard);
 
 keyboard.addEventListener('click', function (event) {
     let elem = event.target;
-    if(elem.id === 'CapsLock') return;
+    if (elem.id === 'CapsLock') return;
     if (elem.classList.contains('key')) {
         texarea.value += elem.innerHTML;
     }
@@ -174,14 +174,14 @@ function createRow(id) {
 
 function reRender(langLocation, localizationKey = 'default') {
     let listKey = document.querySelectorAll('.key');
-    
-/*     let capsLock = document.querySelector('#CapsLock').classList.contains('acitve');
-    console.log(capsLock);
-    let localizationKey = 'default';
-    
-    if(capsLock) {
-        localizationKey = 'shift';
-    }  */
+
+    /*     let capsLock = document.querySelector('#CapsLock').classList.contains('acitve');
+        console.log(capsLock);
+        let localizationKey = 'default';
+        
+        if(capsLock) {
+            localizationKey = 'shift';
+        }  */
 
     listKey.forEach((elem) => {
         let keyCode = elem.id;
@@ -289,7 +289,7 @@ window.addEventListener('keydown', function (e) {
         virtualKeyboardKey.classList.toggle('active');
     };
 
-    if(realKey === 'CapsLock' && virtualKeyboardKey.classList.contains('active')) {
+    if (realKey === 'CapsLock' && virtualKeyboardKey.classList.contains('active')) {
         reRender(rusLocation, 'shift');
     } else {
         reRender(rusLocation, 'default')
@@ -310,7 +310,35 @@ keyboard.addEventListener('mousedown', function (e) {
 
 
 
+//======== shift active =============
 
+window.addEventListener('keydown', function (e) {
+    let realKey = e.code;
+    if ((realKey === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+        reRender(rusLocation, 'shift')
+    };
+});
+
+window.addEventListener('keyup', function(e) {
+    let realKey = e.code;
+    if ((realKey === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+        reRender(rusLocation, 'default')
+    };
+});
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if ((elem.id === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+        reRender(rusLocation, 'shift')
+    };
+});
+
+keyboard.addEventListener('mouseup', function (e) {
+    let elem = e.target;
+    if ((elem.id === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+        reRender(rusLocation, 'default')
+    };
+});
 
 
 
