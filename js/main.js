@@ -3,14 +3,13 @@
 // УБРАТЬ ДВОЙНОЕ НАЖАТИЕ
 // синие линии при многократном нажатии
 // нажатие на двойной шифт слева и справа залипание
+// потеря фокуса при вводе с виртуальнеой клавиатуры
 
 import { engLocation, rusLocation } from "./keys.js";
 
-console.log(engLocation);
-console.log(rusLocation);
-
 const body = document.querySelector('body');
-const keyboard = document.querySelector('.keyboard');
+//const keyboard = document.querySelector('.keyboard');
+let currentLocation = engLocation;
 
 
 let h1 = document.createElement('h1');
@@ -25,12 +24,25 @@ texarea.cols = '50';
 texarea.style.marginBottom = '50px';
 texarea.autofocus = true;
 
-body.insertBefore(texarea, keyboard);
+body.append(texarea);
+
+let keyboard = document.createElement('div');
+keyboard.classList.add('keyboard');
+body.append(keyboard);
+
+
+const h3 = document.createElement('h3');
+h3.innerHTML = "Для переключения языка комбинация: левыe ctrl + alt";
+h3.style.textAlign = 'center';
+h3.style.marginTop = '50px';
+body.append(h3);
 
 keyboard.addEventListener('click', function (event) {
     let elem = event.target;
     if (elem.id === 'CapsLock') return;
     if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') return;
+    if (elem.id === 'ControlLeft' || elem.id === 'ControlRight') return;
+    if (elem.id === 'AltLeft' || elem.id === 'AltRight') return;
     if (elem.classList.contains('key')) {
         texarea.value += elem.innerHTML;
     }
@@ -212,10 +224,10 @@ function reRender(langLocation, localizationKey = 'default') {
     });
 }
 
-reRender(rusLocation);
+reRender(currentLocation);
 
 
-// hover mouse
+// hover mouse =======================================
 
 keyboard.addEventListener('mouseover', function (e) {
     if (e.target.classList.contains('key')) {
@@ -232,7 +244,8 @@ keyboard.addEventListener('mouseout', function (e) {
 });
 
 
-// event keyboard
+//========= event keyboard =============================
+
 window.addEventListener('keydown', function (e) {
     texarea.autofocus = true;
     let realKey = e.code;
@@ -285,6 +298,7 @@ keyboard.addEventListener('mouseup', function (e) {
 //======== capsLock  active =============
 
 window.addEventListener('keydown', function (e) {
+
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#CapsLock`);
 
@@ -293,9 +307,9 @@ window.addEventListener('keydown', function (e) {
     };
 
     if (realKey === 'CapsLock' && virtualKeyboardKey.classList.contains('active')) {
-        reRender(rusLocation, 'shift');
+        reRender(currentLocation, 'shift');
     } else {
-        reRender(rusLocation, 'default')
+        reRender(currentLocation, 'default')
     }
 });
 
@@ -303,10 +317,10 @@ keyboard.addEventListener('mousedown', function (e) {
     let elem = e.target;
     if (elem.id === 'CapsLock') {
         if (elem.classList.contains('active')) {
-            reRender(rusLocation, 'shift');
+            reRender(currentLocation, 'shift');
         } else {
             elem.classList.remove('acitve');
-            reRender(rusLocation, 'default')
+            reRender(currentLocation, 'default')
         }
     }
 });
@@ -318,30 +332,52 @@ keyboard.addEventListener('mousedown', function (e) {
 window.addEventListener('keydown', function (e) {
     let realKey = e.code;
     if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') {
-        reRender(rusLocation, 'shift')
+        reRender(currentLocation, 'shift')
     };
 });
 
-window.addEventListener('keyup', function(e) {
+window.addEventListener('keyup', function (e) {
     let realKey = e.code;
     if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') {
-        reRender(rusLocation, 'default')
+        reRender(currentLocation, 'default')
     };
 });
 
 keyboard.addEventListener('mousedown', function (e) {
     let elem = e.target;
     if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') {
-        reRender(rusLocation, 'shift')
+        reRender(currentLocation, 'shift')
     };
 });
 
 keyboard.addEventListener('mouseup', function (e) {
     let elem = e.target;
     if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') {
-        reRender(rusLocation, 'default')
+        reRender(currentLocation, 'default')
     };
 });
+
+
+// =========== change language =======================
+
+window.addEventListener('keydown', function (e) {
+    
+    let capsLock = this.document.querySelector('#CapsLock');
+
+    if (e.altKey === true && e.ctrlKey === true) {
+        if (currentLocation === engLocation) {
+            if(capsLock.classList.contains('active')) {
+                reRender(currentLocation, 'shift');
+            }
+            currentLocation = rusLocation;
+        } else {
+            if(capsLock.classList.contains('active')) {
+                reRender(currentLocation, 'shift');
+            }
+            currentLocation = engLocation;
+        }
+    }
+}); 
 
 
 
