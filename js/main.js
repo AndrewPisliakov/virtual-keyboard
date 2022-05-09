@@ -1,3 +1,6 @@
+
+// delete
+// localstorage
 // capsLock, SHIFT, TAB при нажатии пишет свое имя 
 //texarea.autofocus = true;
 // УБРАТЬ ДВОЙНОЕ НАЖАТИЕ
@@ -40,6 +43,11 @@ body.append(h3);
 keyboard.addEventListener('click', function (event) {
     let elem = event.target;
     if (elem.id === 'CapsLock') return;
+    if (elem.id === 'Tab') return;
+    if (elem.id === 'MetaLeft') return;
+    if (elem.id === 'Enter') return;
+    if (elem.id === 'Backspace') return;
+    if (elem.id === 'Delete') return;
     if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') return;
     if (elem.id === 'ControlLeft' || elem.id === 'ControlRight') return;
     if (elem.id === 'AltLeft' || elem.id === 'AltRight') return;
@@ -361,23 +369,80 @@ keyboard.addEventListener('mouseup', function (e) {
 // =========== change language =======================
 
 window.addEventListener('keydown', function (e) {
-    
+
     let capsLock = this.document.querySelector('#CapsLock');
 
     if (e.altKey === true && e.ctrlKey === true) {
+        e.preventDefault();
         if (currentLocation === engLocation) {
-            if(capsLock.classList.contains('active')) {
+            if (capsLock.classList.contains('active')) {
                 reRender(currentLocation, 'shift');
             }
             currentLocation = rusLocation;
         } else {
-            if(capsLock.classList.contains('active')) {
+            if (capsLock.classList.contains('active')) {
                 reRender(currentLocation, 'shift');
             }
             currentLocation = engLocation;
         }
     }
-}); 
+});
+
+
+// =========== change TAB =======================
+
+window.addEventListener('keydown', function (e) {
+
+    console.log(e);
+
+    if (e.code === 'Tab') {
+        e.preventDefault();
+        texarea.value += '    ';
+    };
+});
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if (elem.id === 'Tab') {
+        texarea.value += '    ';
+    };
+});
+
+
+//=========== enter =======================
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if (elem.id === 'Enter') {
+        e.preventDefault();
+        texarea.value += '\n';
+    };
+});
+
+//=========== Backspace =======================
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if (elem.id === 'Backspace') {
+        e.preventDefault();
+        let str = texarea.value;
+        texarea.value = str.substring(0, str.length - 1)
+    };
+});
+
+
+//=========== DELETE =======================
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if (elem.id === 'Delete') {
+        e.preventDefault();
+        let str = texarea.value;
+         texarea.value = str.substring(0, str.length - 1);
+    };
+});
+
+
 
 
 
