@@ -25,6 +25,7 @@ keyboard.addEventListener('click', function (event) {
     let elem = event.target;
     if (elem.classList.contains('key')) {
         texarea.value += elem.innerHTML;
+        //elem.classList.add('active');
     }
 
 });
@@ -223,17 +224,22 @@ window.addEventListener('keydown', function (e) {
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
-    virtualKeyboardKey.classList.add('active');
+    virtualKeyboardKey.classList.toggle('active');
 });
 
 window.addEventListener('keyup', function (e) {
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
+    if(realKey === 'CapsLock') {
+        return;
+    };
+
     virtualKeyboardKey.classList.toggle('active');
 });
 
 
+// event virtual keyboard ================================
 
 // hover to button
 keyboard.addEventListener('mousedown', function (e) {
@@ -241,11 +247,16 @@ keyboard.addEventListener('mousedown', function (e) {
         e.target.style.backgroundColor = '';
         e.target.style.fontWeight = '';
         e.target.style.fontWeight = '600';
-        e.target.classList.add('active');
+        e.target.classList.toggle('active');
     }
 });
 
 keyboard.addEventListener('mouseup', function (e) {
+
+    if(e.target.id === 'CapsLock') {
+        return;
+    };
+
     if (e.target.classList.contains('key')) {
         e.target.classList.remove('active');
         e.target.style.fontWeight = '';
@@ -253,23 +264,23 @@ keyboard.addEventListener('mouseup', function (e) {
 });
 
 
+//======== capsLock  active =============
 
 
 
+function isCapsActive() {
 
-
+}
 
 
 // разобраться с локализацией, менять innerHTML при переходе на другой язык
 // на мышь mouseUp mouseDown  KeyUp KeyDown
-
-
 //keyboard.addEventListener('keydown'){} // добавили класс актив
 //keyup убрали класс эктив на shift
 // =======================  event.keyCode === elem.id   чтобы класс актив клавиша была круглой
 
-//добавить в локализацию CapsLock => Caps   если зажаты шифт и капслок то отображает маленькие буквы
 
+//добавить в локализацию CapsLock => Caps   если зажаты шифт и капслок то отображает маленькие буквы
 // когда вызываем функцию rerender смотрим нажат ли 1.shift + caps, 2.shift, 3.caps
 
 
