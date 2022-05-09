@@ -216,23 +216,19 @@ keyboard.addEventListener('mouseout', function (e) {
     }
 });
 
+
 // event keyboard
 window.addEventListener('keydown', function (e) {
     texarea.autofocus = true;
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
-    if (e.target.classList.contains('key')) {
-        virtualKeyboardKey.classList.add('active');
-    }
-
+    virtualKeyboardKey.classList.add('active');
 });
 
 window.addEventListener('keyup', function (e) {
     let realKey = e.code;
-    console.log(realKey);
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
-    console.log(virtualKeyboardKey);
 
     virtualKeyboardKey.classList.toggle('active');
 });
@@ -265,8 +261,9 @@ keyboard.addEventListener('mouseup', function (e) {
 
 
 // разобраться с локализацией, менять innerHTML при переходе на другой язык
-
 // на мышь mouseUp mouseDown  KeyUp KeyDown
+
+
 //keyboard.addEventListener('keydown'){} // добавили класс актив
 //keyup убрали класс эктив на shift
 // =======================  event.keyCode === elem.id   чтобы класс актив клавиша была круглой
