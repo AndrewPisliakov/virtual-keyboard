@@ -1,3 +1,6 @@
+
+// delete
+// localstorage
 // capsLock, SHIFT, TAB при нажатии пишет свое имя 
 //texarea.autofocus = true;
 // УБРАТЬ ДВОЙНОЕ НАЖАТИЕ
@@ -44,6 +47,7 @@ keyboard.addEventListener('click', function (event) {
     if (elem.id === 'MetaLeft') return;
     if (elem.id === 'Enter') return;
     if (elem.id === 'Backspace') return;
+    if (elem.id === 'Delete') return;
     if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') return;
     if (elem.id === 'ControlLeft' || elem.id === 'ControlRight') return;
     if (elem.id === 'AltLeft' || elem.id === 'AltRight') return;
@@ -423,11 +427,20 @@ keyboard.addEventListener('mousedown', function (e) {
         e.preventDefault();
         let str = texarea.value;
         texarea.value = str.substring(0, str.length - 1)
-        
     };
 });
 
 
+//=========== DELETE =======================
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if (elem.id === 'Delete') {
+        e.preventDefault();
+        let str = texarea.value;
+         texarea.value = str.substring(0, str.length - 1);
+    };
+});
 
 
 
