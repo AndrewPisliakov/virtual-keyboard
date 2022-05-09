@@ -1,3 +1,7 @@
+// capsLock, SHIFT, TAB при нажатии пишет свое имя 
+//texarea.autofocus = true;
+// УБРАТЬ ДВОЙНОЕ НАЖАТИЕ
+
 import { engLocation, rusLocation } from "./keys.js";
 
 console.log(engLocation);
@@ -23,9 +27,9 @@ body.insertBefore(texarea, keyboard);
 
 keyboard.addEventListener('click', function (event) {
     let elem = event.target;
+    if(elem.id === 'CapsLock') return;
     if (elem.classList.contains('key')) {
         texarea.value += elem.innerHTML;
-        //elem.classList.add('active');
     }
 
 });
@@ -168,12 +172,20 @@ function createRow(id) {
 
 //===================== function rerender ===================
 
-function reRender(langLocation) {
+function reRender(langLocation, localizationKey = 'default') {
     let listKey = document.querySelectorAll('.key');
+    
+/*     let capsLock = document.querySelector('#CapsLock').classList.contains('acitve');
+    console.log(capsLock);
+    let localizationKey = 'default';
+    
+    if(capsLock) {
+        localizationKey = 'shift';
+    }  */
 
     listKey.forEach((elem) => {
         let keyCode = elem.id;
-        elem.innerHTML = langLocation[keyCode].default;
+        elem.innerHTML = langLocation[keyCode][localizationKey];
 
         if (keyCode === 'ArrowUp') {
             elem.innerHTML = '&uarr;'
@@ -200,14 +212,13 @@ function reRender(langLocation) {
 reRender(rusLocation);
 
 
-
 // hover mouse
 
 keyboard.addEventListener('mouseover', function (e) {
     if (e.target.classList.contains('key')) {
         e.target.style.backgroundColor = '#A2CCB6';
         e.target.style.fontWeight = '400';
-    }
+    };
 });
 
 keyboard.addEventListener('mouseout', function (e) {
@@ -224,18 +235,22 @@ window.addEventListener('keydown', function (e) {
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
-    virtualKeyboardKey.classList.toggle('active');
+    if (realKey === 'CapsLock') {
+        return;
+    };
+
+    virtualKeyboardKey.classList.add('active');
 });
 
 window.addEventListener('keyup', function (e) {
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
-    if(realKey === 'CapsLock') {
+    if (realKey === 'CapsLock') {
         return;
     };
 
-    virtualKeyboardKey.classList.toggle('active');
+    virtualKeyboardKey.classList.remove('active');
 });
 
 
@@ -253,7 +268,7 @@ keyboard.addEventListener('mousedown', function (e) {
 
 keyboard.addEventListener('mouseup', function (e) {
 
-    if(e.target.id === 'CapsLock') {
+    if (e.target.id === 'CapsLock') {
         return;
     };
 
@@ -266,11 +281,37 @@ keyboard.addEventListener('mouseup', function (e) {
 
 //======== capsLock  active =============
 
+window.addEventListener('keydown', function (e) {
+    let realKey = e.code;
+    let virtualKeyboardKey = keyboard.querySelector(`#CapsLock`);
+
+    if (realKey === 'CapsLock') {
+        virtualKeyboardKey.classList.toggle('active');
+    };
+
+    if(realKey === 'CapsLock' && virtualKeyboardKey.classList.contains('active')) {
+        reRender(rusLocation, 'shift');
+    } else {
+        reRender(rusLocation, 'default')
+    }
+});
+
+keyboard.addEventListener('mousedown', function (e) {
+    let elem = e.target;
+    if (elem.id === 'CapsLock') {
+        if (elem.classList.contains('active')) {
+            reRender(rusLocation, 'shift');
+        } else {
+            elem.classList.remove('acitve');
+            reRender(rusLocation, 'default')
+        }
+    }
+});
 
 
-function isCapsActive() {
 
-}
+
+
 
 
 // разобраться с локализацией, менять innerHTML при переходе на другой язык
