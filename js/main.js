@@ -1,6 +1,8 @@
 // capsLock, SHIFT, TAB при нажатии пишет свое имя 
 //texarea.autofocus = true;
 // УБРАТЬ ДВОЙНОЕ НАЖАТИЕ
+// синие линии при многократном нажатии
+// нажатие на двойной шифт слева и справа залипание
 
 import { engLocation, rusLocation } from "./keys.js";
 
@@ -28,6 +30,7 @@ body.insertBefore(texarea, keyboard);
 keyboard.addEventListener('click', function (event) {
     let elem = event.target;
     if (elem.id === 'CapsLock') return;
+    if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') return;
     if (elem.classList.contains('key')) {
         texarea.value += elem.innerHTML;
     }
@@ -314,28 +317,28 @@ keyboard.addEventListener('mousedown', function (e) {
 
 window.addEventListener('keydown', function (e) {
     let realKey = e.code;
-    if ((realKey === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+    if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') {
         reRender(rusLocation, 'shift')
     };
 });
 
 window.addEventListener('keyup', function(e) {
     let realKey = e.code;
-    if ((realKey === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+    if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') {
         reRender(rusLocation, 'default')
     };
 });
 
 keyboard.addEventListener('mousedown', function (e) {
     let elem = e.target;
-    if ((elem.id === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+    if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') {
         reRender(rusLocation, 'shift')
     };
 });
 
 keyboard.addEventListener('mouseup', function (e) {
     let elem = e.target;
-    if ((elem.id === 'ShiftLeft' || realKey === 'ShiftRight') || (realKey === 'ShiftLeft' && realKey === 'ShiftRight')) {
+    if (elem.id === 'ShiftLeft' || elem.id === 'ShiftRight') {
         reRender(rusLocation, 'default')
     };
 });
