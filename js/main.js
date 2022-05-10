@@ -53,7 +53,7 @@ if (localStorage.getItem('sessionKeyBoard')) {
     currentLocation = JSON.parse(localStorage.getItem('sessionKeyBoard'));
     reRender(currentLocation);
 } else {
-    renderKeyboard();
+    reRender();
 };
 
 function listenerLocakStorage() {
@@ -259,6 +259,9 @@ keyboard.addEventListener('mouseout', function (e) {
     if (e.target.classList.contains('key')) {
         e.target.style.backgroundColor = '';
         e.target.style.fontWeight = '';
+    };
+    if (e.target.classList.contains('key') && e.target.classList.contains('active')) {
+        e.target.classList.remove('active');
     }
 });
 
@@ -286,7 +289,6 @@ window.addEventListener('keyup', function (e) {
 
     virtualKeyboardKey.classList.remove('active');
 });
-
 
 // event virtual keyboard ================================
 
