@@ -3,148 +3,177 @@ export const engLocation = {
         default: '`',
         shift: '`',
         shiftCaps: '`',
+        caps: '`',
     },
     'Digit1': {
         default: '1',
         shift: '!',
-        shiftCaps: '!'
+        shiftCaps: '!',
+        caps: '1',
     },
     'Digit2': {
         default: '2',
         shift: '@',
-        shiftCaps: '@'
+        shiftCaps: '@',
+        caps: '2',
     },
     'Digit3': {
         default: '3',
         shift: '#',
-        shiftCaps: '#'
+        shiftCaps: '#',
+        caps: '3',
     },
     'Digit4': {
         default: '4',
         shift: '$',
-        shiftCaps: '$'
+        shiftCaps: '$',
+        caps: '4',
     },
     'Digit5': {
         default: '5',
         shift: '%',
-        shiftCaps: '%'
+        shiftCaps: '%',
+        caps: '5',
     },
     'Digit6': {
         default: '6',
         shift: '^',
-        shiftCaps: '^'
+        shiftCaps: '^',
+        caps: '6',
     },
     'Digit7': {
         default: '7',
         shift: '&',
-        shiftCaps: '&'
+        shiftCaps: '&',
+        caps: '7',
     },
     'Digit8': {
         default: '8',
         shift: '*',
-        shiftCaps: '*'
+        shiftCaps: '*',
+        caps: '8',
     },
     'Digit9': {
         default: '9',
         shift: '(',
-        shiftCaps: '('
+        shiftCaps: '(',
+        caps: '9',
     },
     'Digit0': {
         default: '0',
         shift: ')',
-        shiftCaps: ')'
+        shiftCaps: ')', 
+        caps: '0',
     },
     'Minus': {
         default: '-',
         shift: '_',
-        shiftCaps: '_'
+        shiftCaps: '_',
+        caps: '-',
     },
     'Equal': {
         default: '=',
         shift: '+',
-        shiftCaps: '+'
+        shiftCaps: '+',
+        caps: '=',
     },
     'Backspace': {
         default: 'Backspace',
         shift: 'Backspace',
-        shiftCaps: 'Backspace'
+        shiftCaps: 'Backspace',
+        caps: 'Backspace',
     },
 
     // second line=========================================
     'Tab': {
         default: 'Tab',
         shift: 'Tab',
-        shiftCaps: 'Tab'
+        shiftCaps: 'Tab',
+        caps: 'Tab',
     },
     'KeyQ': {
         default: 'q',
         shift: 'Q',
-        shiftCaps: 'q'
+        shiftCaps: 'q',
+        caps: 'Q',
     },
     'KeyW': {
         default: 'w',
         shift: 'W',
-        shiftCaps: 'w'
+        shiftCaps: 'w',
+        caps: 'W',
     },
     'KeyE': {
         default: 'e',
         shift: 'E',
-        shiftCaps: 'e'
+        shiftCaps: 'e',
+        caps: 'E',
     },
     'KeyR': {
         default: 'r',
         shift: 'R',
-        shiftCaps: 'r'
+        shiftCaps: 'r',
+        caps: 'R',
     },
     'KeyT': {
         default: 't',
         shift: 'T',
-        shiftCaps: 't'
+        shiftCaps: 't',
+        caps: 'T',
     },
     'KeyY': {
         default: 'y',
         shift: 'Y',
-        shiftCaps: 'y'
+        shiftCaps: 'y',
+        caps: 'Y',
     },
     'KeyU': {
         default: 'u',
         shift: 'U',
-        shiftCaps: 'u'
+        shiftCaps: 'u',
+        caps: 'U',
     },
     'KeyI': {
         default: 'i',
         shift: 'I',
-        shiftCaps: 'i'
+        shiftCaps: 'i',
+        caps: 'I',
     },
     'KeyO': {
         default: 'o',
         shift: 'O',
-        shiftCaps: 'o'
+        shiftCaps: 'o',
+        caps: 'O',
     },
     'KeyP': {
         default: 'p',
         shift: 'P',
-        shiftCaps: 'p'
+        shiftCaps: 'p',
+        caps: 'P',
     },
     'BracketLeft': {
         default: '[',
         shift: '{',
-        shiftCaps: '{'
+        shiftCaps: '{',
+        caps: '[',
     },
     'BracketRight': {
         default: ']',
         shift: '}',
-        shiftCaps: '}'
+        shiftCaps: '}',
+        caps: ']',
     },
     'Backslash': {
         default: '\\',
         shift: '|',
-        shiftCaps: '|'
+        shiftCaps: '|', 
+        caps: '\\',
     },
     'Delete': {
         default: 'Delete',
         shift: 'Delete',
-        shiftCaps: 'Delete'
+        shiftCaps: 'Delete',
+        caps: 'Delete',
     },
 
 
@@ -153,74 +182,88 @@ export const engLocation = {
     'CapsLock': {
         default: 'CapsLock',
         shift: 'CapsLock',
-        shiftCaps: 'CapsLock'
+        shiftCaps: 'CapsLock',
+        caps: 'CapsLock',
     },
     'KeyA': {
         default: 'a',
         shift: 'A',
-        shiftCaps: 'a'
+        shiftCaps: 'a',
+        caps: 'A',
     },
     'KeyS': {
         default: 's',
         shift: 'S',
-        shiftCaps: 's'
+        shiftCaps: 's',
+        caps: 'S',
     },
     'KeyD': {
         default: 'd',
         shift: 'D',
-        shiftCaps: 'd'
+        shiftCaps: 'd',
+        caps: 'D',
     },
     'KeyF': {
         default: 'f',
         shift: 'F',
-        shiftCaps: 'f'
+        shiftCaps: 'f',
+        caps: 'F',
     },
     'KeyG': {
         default: 'g',
         shift: 'G',
-        shiftCaps: 'g'
+        shiftCaps: 'g',
+        caps: 'G',
     },
     'KeyH': {
         default: 'h',
         shift: 'H',
-        shiftCaps: 'h'
+        shiftCaps: 'h',
+        caps: 'H',
     },
     'KeyJ': {
         default: 'j',
         shift: 'J',
-        shiftCaps: 'j'
+        shiftCaps: 'j',
+        caps: 'J',
     },
     'KeyK': {
         default: 'k',
         shift: 'K',
-        shiftCaps: 'k'
+        shiftCaps: 'k',
+        caps: 'K',
     },
     'KeyL': {
         default: 'l',
         shift: 'L',
-        shiftCaps: 'l'
+        shiftCaps: 'l',
+        caps: 'L',
     },
     'Semicolon': {
         default: ';',
         shift: ':',
-        shiftCaps: ':'
+        shiftCaps: ':',
+        caps: ';',
     },
     'Quote': {
         default: "'",
         shift: '"',
-        shiftCaps: '"'
+        shiftCaps: '"',
+        caps: "'",
     },
     'Enter': {
         default: 'Enter',
         shift: 'Enter',
-        shiftCaps: 'Enter'
+        shiftCaps: 'Enter',
+        caps: "Enter",
     },
 
     //==== fourth line =================================
     'ShiftLeft': {
         default: 'Shift',
         shift: 'Shift',
-        shiftCaps: 'Shift'
+        shiftCaps: 'Shift',
+        caps: "Shift",
     },
 /*     'IntlBackslash': {
         default: '\\',
@@ -230,62 +273,74 @@ export const engLocation = {
     'KeyZ': {
         default: 'z',
         shift: 'Z',
-        shiftCaps: 'z'
+        shiftCaps: 'z',
+        caps: 'Z'
     },
     'KeyX': {
         default: 'x',
         shift: 'X',
-        shiftCaps: 'x'
+        shiftCaps: 'x',
+        caps: 'X'
     },
     'KeyC': {
         default: 'c',
         shift: 'C',
-        shiftCaps: 'c'
+        shiftCaps: 'c',
+        caps: 'C'
     },
     'KeyV': {
         default: 'v',
         shift: 'V',
-        shiftCaps: 'v'
+        shiftCaps: 'v',
+        caps: 'V'
     },
     'KeyB': {
         default: 'b',
         shift: 'B',
-        shiftCaps: 'b'
+        shiftCaps: 'b',
+        caps: 'B'
     },
     'KeyN': {
         default: 'n',
         shift: 'N',
-        shiftCaps: 'n'
+        shiftCaps: 'n',
+        caps: 'N'
     },
     'KeyM': {
         default: 'm',
         shift: 'M',
-        shiftCaps: 'm'
+        shiftCaps: 'm',
+        caps: 'M'
     },
     'Comma': {
         default: ',',
         shift: '<',
-        shiftCaps: '<'
+        shiftCaps: '<',
+        caps: ','
     },
     'Period': {
         default: '.',
         shift: '>',
-        shiftCaps: '>'
+        shiftCaps: '>',
+        caps: '.'
     },
     'Slash': {
         default: '/',
         shift: '?',
-        shiftCaps: '?'
+        shiftCaps: '?',
+        caps: '/',
     },
     'ArrowUp': {
         default: 'ArrowUp',
         shift: 'ArrowUp',
-        shiftCaps: 'ArrowUp'
+        shiftCaps: 'ArrowUp',
+        caps: 'ArrowUp',
     },
     'ShiftRight': {
         default: 'Shift',
         shift: 'Shift',
-        shiftCaps: 'Shift'
+        shiftCaps: 'Shift',
+        caps: 'Shift',
     },
 
     //================== fifth line ================
@@ -293,48 +348,57 @@ export const engLocation = {
     'ControlLeft': {
         default: 'Control',
         shift: 'Control',
-        shiftCaps: 'Control'
+        shiftCaps: 'Control',
+        caps: 'Control',
     },
 
     'MetaLeft': {
         default: 'Meta',
         shift: 'Meta',
-        shiftCaps: 'Meta'
+        shiftCaps: 'Meta',
+        caps: 'Meta',
     },
     'AltLeft': {
         default: 'Alt',
         shift: 'Alt',
-        shiftCaps: 'Alt'
+        shiftCaps: 'Alt',
+        caps: 'Alt',
     },
     'Space': {
         default: ' ',
         shift: ' ',
-        shiftCaps: ' '
+        shiftCaps: ' ',
+        caps: ' ',
     },
     'AltRight': {
         default: 'Alt',
         shift: 'Alt',
-        shiftCaps: 'Alt'
+        shiftCaps: 'Alt',
+        caps: 'Alt',
     },
     'ArrowLeft': {
         default: 'ArrowLeft',
         shift: 'ArrowLeft',
-        shiftCaps: 'ArrowLeft'
+        shiftCaps: 'ArrowLeft',
+        caps: 'ArrowLeft',
     },
     'ArrowDown': {
         default: 'ArrowDown',
         shift: 'ArrowDown',
-        shiftCaps: 'ArrowDown'
+        shiftCaps: 'ArrowDown',
+        caps: 'ArrowDown',
     },
     'ArrowRight': {
         default: 'ArrowRight',
         shift: 'ArrowRight',
-        shiftCaps: 'ArrowRight'
+        shiftCaps: 'ArrowRight',
+        caps: 'ArrowRight',
     },
     'ControlRight': {
         default: 'Control',
         shift: 'Control',
-        shiftCaps: 'Control'
+        shiftCaps: 'Control',
+        caps: 'Control',
     }
 };
 
@@ -343,72 +407,86 @@ export const rusLocation = {
     'Backquote': {
         default: 'ё',
         shift: 'Ё',
-        shiftCaps: 'ё'
+        shiftCaps: 'ё',
+        caps: 'Ё',
     },
     'Digit1': {
         default: '1',
         shift: '!',
-        shiftCaps: '!'
+        shiftCaps: '!',
+        caps: '1',
     },
     'Digit2': {
         default: '2',
         shift: '"',
-        shiftCaps: '"'
+        shiftCaps: '"',
+        caps: '2',
     },
     'Digit3': {
         default: '3',
         shift: '№',
-        shiftCaps: '№'
+        shiftCaps: '№',
+        caps: '3',
     },
     'Digit4': {
         default: '4',
         shift: ';',
-        shiftCaps: ';'
+        shiftCaps: ';',
+        caps: '4',
     },
     'Digit5': {
         default: '5',
         shift: '%',
-        shiftCaps: '%'
+        shiftCaps: '%',
+        caps: '5',
     },
     'Digit6': {
         default: '6',
         shift: ':',
-        shiftCaps: ':'
+        shiftCaps: ':',
+        caps: '6',
     },
     'Digit7': {
         default: '7',
         shift: '?',
-        shiftCaps: '?'
+        shiftCaps: '?',
+        caps: '7',
     },
     'Digit8': {
         default: '8',
         shift: '*',
-        shiftCaps: '*'
+        shiftCaps: '*',
+        caps: '8',
     },
     'Digit9': {
         default: '9',
         shift: '(',
-        shiftCaps: '('
+        shiftCaps: '(',
+        caps: '9',
     },
     'Digit0': {
         default: '0',
         shift: ')',
-        shiftCaps: ')'
+        shiftCaps: ')',
+        caps: '0',
     },
     'Minus': {
         default: '-',
         shift: '_',
-        shiftCaps: '_'
+        shiftCaps: '_',
+        caps: '-',
     },
     'Equal': {
         default: '=',
         shift: '+',
-        shiftCaps: '+'
+        shiftCaps: '+',
+        caps: '=',
     },
     'Backspace': {
         default: 'Backspace',
         shift: 'Backspace',
-        shiftCaps: 'Backspace'
+        shiftCaps: 'Backspace',
+        caps: 'Backspace',
     },
 
     // =========== second line rus =====================
@@ -417,77 +495,93 @@ export const rusLocation = {
     'Tab': {
         default: 'Tab',
         shift: 'Tab',
-        shiftCaps: 'Tab'
+        shiftCaps: 'Tab',
+        caps: 'Tab',
     },
     'KeyQ': {
         default: 'й',
         shift: 'Й',
-        shiftCaps: 'й'
+        shiftCaps: 'й',
+        caps: 'Й',
+
     },    
     'KeyW': {
         default: 'ц',
         shift: 'Ц',
-        shiftCaps: 'ц'
+        shiftCaps: 'ц',
+        caps: 'Ц',
     },
     'KeyE': {
         default: 'у',
         shift: 'У',
-        shiftCaps: 'у'
+        shiftCaps: 'у', 
+        caps: 'У',
     },    
     'KeyR': {
         default: 'к',
         shift: 'К',
-        shiftCaps: 'к'
+        shiftCaps: 'к',
+        caps: 'К',
     },
     'KeyT': {
         default: 'е',
         shift: 'Е',
-        shiftCaps: 'е'
+        shiftCaps: 'е',
+        caps: 'Е',
     },    
     'KeyY': {
         default: 'н',
         shift: 'Н',
-        shiftCaps: 'н'
+        shiftCaps: 'н',
+        caps: 'Н',
     },
     'KeyU': {
         default: 'г',
         shift: 'Г',
-        shiftCaps: 'г'
+        shiftCaps: 'г',
+        caps: 'Г',
     },
     'KeyI': {
         default: 'ш',
         shift: 'Ш',
-        shiftCaps: 'ш'
+        shiftCaps: 'ш',
+        caps: 'Ш',
     },
     'KeyO': {
         default: 'щ',
         shift: 'Щ',
-        shiftCaps: 'щ'
+        shiftCaps: 'щ',
+        caps: 'Щ',
     },
     'KeyP': {
         default: 'з',
         shift: 'З',
-        shiftCaps: 'з'
+        shiftCaps: 'з',
+        caps: 'З',
     },
     'BracketLeft': {
         default: 'х',
         shift: 'Х',
-        shiftCaps: 'х'
+        shiftCaps: 'х',
+        caps: 'Х',
     },
     'BracketRight': {
         default: 'ъ',
         shift: 'Ъ',
-        shiftCaps: 'ъ'
+        shiftCaps: 'ъ', 
+        caps: 'Ъ',
     },
     'Backslash': {
         default: '\\',
         shift: '/',
-        shiftCaps: '/'
+        shiftCaps: '/',
+        caps: '\\',
     },
     'Delete': {
         default: 'Delete',
         shift: 'Delete',
-        shiftCaps: 'Delete'
+        shiftCaps: 'Delete',
+        caps: 'Delete',
     },
 
 // ========= third line rus =======================
@@ -496,133 +590,159 @@ export const rusLocation = {
     'CapsLock': {
         default: 'CapsLock',
         shift: 'CapsLock',
-        shiftCaps: 'CapsLock'
+        shiftCaps: 'CapsLock',
+        caps: 'CapsLock',
     },
     'KeyA': {
         default: 'ф',
         shift: 'Ф',
-        shiftCaps: 'ф'
+        shiftCaps: 'ф',
+        caps: 'Ф',
     },
     'KeyS': {
         default: 'ы',
         shift: 'Ы',
-        shiftCaps: 'ы'
+        shiftCaps: 'ы',
+        caps: 'Ы',
     },
     'KeyD': {
         default: 'в',
         shift: 'В',
-        shiftCaps: 'в'
+        shiftCaps: 'в',
+        caps: 'В',
     },
     'KeyF': {
         default: 'а',
         shift: 'А',
-        shiftCaps: 'а'
+        shiftCaps: 'а',
+        caps: 'А',
     },
     'KeyG': {
         default: 'п',
         shift: 'П',
-        shiftCaps: 'п'
+        shiftCaps: 'п',
+        caps: 'П',
     },
     'KeyH': {
         default: 'р',
         shift: 'Р',
-        shiftCaps: 'р'
+        shiftCaps: 'р', 
+        caps: 'Р',
     },
     'KeyJ': {
         default: 'о',
         shift: 'О',
-        shiftCaps: 'о'
+        shiftCaps: 'о',
+        caps: 'О',
     },
     'KeyK': {
         default: 'л',
         shift: 'Л',
-        shiftCaps: 'л'
+        shiftCaps: 'л', 
+        caps: 'Л',
     },
     'KeyL': {
         default: 'д',
         shift: 'Д',
-        shiftCaps: 'д'
+        shiftCaps: 'д', 
+        caps: 'Д',
     },
     'Semicolon': {
         default: 'ж',
         shift: 'Ж',
-        shiftCaps: 'ж'
+        shiftCaps: 'ж', 
+        caps: 'Ж',
     },
     'Quote': {
         default: 'э',
         shift: 'Э',
-        shiftCaps: 'э'
+        shiftCaps: 'э', 
+        caps: 'Э',
     },
     'Enter': {
         default: 'Enter',
         shift: 'Enter',
-        shiftCaps: 'Enter'
+        shiftCaps: 'Enter', 
+        caps: 'Enter',
     },
     // ================ fourth line rus =========================
     'ShiftLeft': {
         default: 'Shift',
         shift: 'Shift',
-        shiftCaps: 'Shift'
+        shiftCaps: 'Shift', 
+        caps: 'Shift',
     },
     'KeyZ': {
         default: 'я',
         shift: 'Я',
-        shiftCaps: 'я'
+        shiftCaps: 'я', 
+        caps: 'Я',
     },
     'KeyX': {
         default: 'ч',
         shift: 'Ч',
-        shiftCaps: 'ч'
+        shiftCaps: 'ч', 
+        caps: 'Ч',
     },
     'KeyC': {
         default: 'с',
         shift: 'С',
-        shiftCaps: 'с'
+        shiftCaps: 'с', 
+        caps: 'С',
     },
     'KeyV': {
         default: 'м',
         shift: 'М',
-        shiftCaps: 'м'
+        shiftCaps: 'м', 
+        caps: 'М',
     },
     'KeyB': {
         default: 'и',
         shift: 'И',
-        shiftCaps: 'и'
+        shiftCaps: 'и', 
+        caps: 'И',
     },
     'KeyN': {
         default: 'т',
         shift: 'Т',
-        shiftCaps: 'т'
+        shiftCaps: 'т', 
+        caps: 'Т',
     },
     'KeyM': {
         default: 'ь',
         shift: 'Ь',
-        shiftCaps: 'ь'
+        shiftCaps: 'ь', 
+        caps: 'Ь',
     },
     'Comma': {
         default: 'б',
         shift: 'Б',
-        shiftCaps: 'б'
+        shiftCaps: 'б', 
+        caps: 'Б',
     },
     'Period': {
         default: 'ю',
         shift: 'Ю',
-        shiftCaps: 'ю'
+        shiftCaps: 'ю', 
+        caps: 'Ю',
     },
     'Slash': {
         default: '.',
         shift: ',',
-        shiftCaps: '.'
+        shiftCaps: '.', 
+        caps: '.',
     },
     'ArrowUp': {
         default: 'ArrowUp',
         shift: 'ArrowUp',
-        shiftCaps: 'ArrowUp'
+        shiftCaps: 'ArrowUp', 
+        caps: 'ArrowUp',
     },
     'ShiftRight': {
         default: 'Shift',
         shift: 'Shift',
-        shiftCaps: 'Shift'
+        shiftCaps: 'Shift', 
+        caps: 'Shift',
     },
 
     // ============= fifth line rus ==========================
@@ -631,48 +751,59 @@ export const rusLocation = {
     'ControlLeft': {
         default: 'Control',
         shift: 'Control',
-        shiftCaps: 'Control'
+        shiftCaps: 'Control',
+        caps: 'Control',
     },
 
     'MetaLeft': {
         default: 'Meta',
         shift: 'Meta',
-        shiftCaps: 'Meta'
+        shiftCaps: 'Meta',
+        caps: 'Meta',
+        
     },
     'AltLeft': {
         default: 'Alt',
         shift: 'Alt',
-        shiftCaps: 'Alt'
+        shiftCaps: 'Alt', 
+        caps: 'Alt',
     },
     'Space': {
         default: ' ',
         shift: ' ',
-        shiftCaps: ' '
+        shiftCaps: ' ', 
+        caps: ' ',
     },
     'AltRight': {
         default: 'Alt',
         shift: 'Alt',
-        shiftCaps: 'Alt'
+        shiftCaps: 'Alt', 
+        caps: 'Alt',
     },
     'ArrowLeft': {
         default: 'ArrowLeft',
         shift: 'ArrowLeft',
-        shiftCaps: 'ArrowLeft'
+        shiftCaps: 'ArrowLeft', 
+        caps: 'ArrowLeft',
     },
     'ArrowDown': {
         default: 'ArrowDown',
         shift: 'ArrowDown',
-        shiftCaps: 'ArrowDown'
+        shiftCaps: 'ArrowDown', 
+        caps: 'ArrowDown',
+
     },
     'ArrowRight': {
         default: 'ArrowRight',
         shift: 'ArrowRight',
-        shiftCaps: 'ArrowRight'
+        shiftCaps: 'ArrowRight', 
+        caps: 'ArrowRight',
     },
     'ControlRight': {
         default: 'Control',
         shift: 'Control',
-        shiftCaps: 'Control'
+        shiftCaps: 'Control', 
+        caps: 'Control',
     },
 }
 

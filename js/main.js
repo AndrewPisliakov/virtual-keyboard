@@ -275,7 +275,6 @@ keyboard.addEventListener('mouseout', function (e) {
 //========= event keyboard =============================
 
 window.addEventListener('keydown', function (e) {
-    console.log(e);
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
@@ -335,7 +334,7 @@ window.addEventListener('keydown', function (e) {
     };
 
     if (realKey === 'CapsLock' && virtualKeyboardKey.classList.contains('active')) {
-        reRender(currentLocation, 'shift');
+        reRender(currentLocation, 'caps');
     } else {
         reRender(currentLocation, 'default')
     }
@@ -345,7 +344,7 @@ keyboard.addEventListener('mousedown', function (e) {
     let elem = e.target;
     if (elem.id === 'CapsLock') {
         if (elem.classList.contains('active')) {
-            reRender(currentLocation, 'shift');
+            reRender(currentLocation, 'caps');
         } else {
             elem.classList.remove('acitve');
             reRender(currentLocation, 'default')
