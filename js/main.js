@@ -1,7 +1,7 @@
 
 //Используется ESLint
 // css animation button при нажатии и отпускании 
-// capsLock  add key 
+ 
 //* shift + capsLock
 
 import { engLocation, rusLocation } from "./keys.js";
