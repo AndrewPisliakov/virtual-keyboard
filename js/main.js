@@ -1,19 +1,15 @@
 
-// delete
-// localstorage
-// capsLock, SHIFT, TAB при нажатии пишет свое имя 
-//texarea.autofocus = true;
-// УБРАТЬ ДВОЙНОЕ НАЖАТИЕ
-// синие линии при многократном нажатии
-// нажатие на двойной шифт слева и справа залипание
-// потеря фокуса при вводе с виртуальнеой клавиатуры
+//Используется ESLint
+// css animation button при нажатии и отпускании 
+// capsLock  add key 
+//* shift + capsLock
 
 import { engLocation, rusLocation } from "./keys.js";
 
 const body = document.querySelector('body');
-//const keyboard = document.querySelector('.keyboard');
 let currentLocation = engLocation;
 
+// ==================== render body ====================================
 
 let h1 = document.createElement('h1');
 h1.innerHTML = "RSS Виртуальная клавиатура";
@@ -52,17 +48,34 @@ keyboard.addEventListener('click', function (event) {
     if (elem.id === 'ControlLeft' || elem.id === 'ControlRight') return;
     if (elem.id === 'AltLeft' || elem.id === 'AltRight') return;
     if (elem.classList.contains('key')) {
+        texarea.focus();
         texarea.value += elem.innerHTML;
     }
-
 });
 
-renderKeyboard();
+
+// ============== Local Storage =========================================
+
+
+if (localStorage.getItem('sessionKeyBoard')) {
+    renderKeyboard();
+    currentLocation = JSON.parse(localStorage.getItem('sessionKeyBoard'));
+    reRender(currentLocation);
+} else {
+    renderKeyboard();
+}
+
+function listenerLocakStorage() {
+    localStorage.setItem('sessionKeyBoard', JSON.stringify(currentLocation));
+}
+
+// ================================ render virtualKeyBoard ==============
+
 
 function renderKeyboard() {
     let i = 0;
 
-    for (let key in engLocation) {
+    for (let key in currentLocation) {
 
         if (i <= 13) {
             if (i === 0) {
@@ -72,7 +85,7 @@ function renderKeyboard() {
             let div = document.createElement('div');
             div.classList.add('key');
             div.setAttribute('id', key);
-            div.innerHTML = engLocation[key].default;
+            div.innerHTML = currentLocation[key].default;
 
             if (div.innerHTML === 'Backspace') {
                 div.classList.add('key__delete');
@@ -89,7 +102,7 @@ function renderKeyboard() {
             let div = document.createElement('div');
             div.classList.add('key');
             div.setAttribute('id', key);
-            div.innerHTML = engLocation[key].default;
+            div.innerHTML = currentLocation[key].default;
 
             if (div.innerHTML === 'Tab') {
                 div.classList.add('key__oneandhalf');
@@ -107,7 +120,7 @@ function renderKeyboard() {
             let div = document.createElement('div');
             div.classList.add('key');
             div.setAttribute('id', key);
-            div.innerHTML = engLocation[key].default;
+            div.innerHTML = currentLocation[key].default;
 
             if (div.innerHTML === 'CapsLock') {
                 div.classList.add('key__caps');
@@ -128,7 +141,7 @@ function renderKeyboard() {
             let div = document.createElement('div');
             div.classList.add('key');
             div.setAttribute('id', key);
-            div.innerHTML = engLocation[key].default;
+            div.innerHTML = currentLocation[key].default;
 
             if (key === 'ShiftLeft' || key === 'ShiftRight') {
                 div.classList.add('key__shift');
@@ -150,7 +163,7 @@ function renderKeyboard() {
             let div = document.createElement('div');
             div.classList.add('key');
             div.setAttribute('id', key);
-            div.innerHTML = engLocation[key].default;
+            div.innerHTML = currentLocation[key].default;
 
             if (key === 'ControlLeft') {
                 div.classList.add('key__bottom-funct');
@@ -230,10 +243,17 @@ function reRender(langLocation, localizationKey = 'default') {
             elem.innerHTML = 'Ctrl';
         }
     });
+
 }
 
 reRender(currentLocation);
 
+// ============== disable text selection =============== ============
+const disableselect = (e) => {
+    return false
+}
+keyboard.onselectstart = disableselect
+keyboard.onmousedown = disableselect
 
 // hover mouse =======================================
 
@@ -255,7 +275,7 @@ keyboard.addEventListener('mouseout', function (e) {
 //========= event keyboard =============================
 
 window.addEventListener('keydown', function (e) {
-    texarea.autofocus = true;
+    console.log(e);
     let realKey = e.code;
     let virtualKeyboardKey = keyboard.querySelector(`#${realKey}`);
 
@@ -334,7 +354,6 @@ keyboard.addEventListener('mousedown', function (e) {
 });
 
 
-
 //======== shift active =============
 
 window.addEventListener('keydown', function (e) {
@@ -369,22 +388,26 @@ keyboard.addEventListener('mouseup', function (e) {
 // =========== change language =======================
 
 window.addEventListener('keydown', function (e) {
-
-    let capsLock = this.document.querySelector('#CapsLock');
-
-    if (e.altKey === true && e.ctrlKey === true) {
+    if (e.code === 'AltLeft') {
         e.preventDefault();
+    }
+    let capsLock = this.document.querySelector('#CapsLock');
+    let ctrl = this.document.querySelector('#ControlLeft');
+    let alt = this.document.querySelector('#AltLeft');
+
+    if (ctrl.classList.contains('active') && alt.classList.contains('active')) {
         if (currentLocation === engLocation) {
-            if (capsLock.classList.contains('active')) {
-                reRender(currentLocation, 'shift');
-            }
             currentLocation = rusLocation;
         } else {
-            if (capsLock.classList.contains('active')) {
-                reRender(currentLocation, 'shift');
-            }
             currentLocation = engLocation;
         }
+        if (capsLock.classList.contains('active')) {
+            reRender(currentLocation, 'shift');
+        } else {
+            reRender(currentLocation);
+        };
+
+        listenerLocakStorage();
     }
 });
 
@@ -392,9 +415,6 @@ window.addEventListener('keydown', function (e) {
 // =========== change TAB =======================
 
 window.addEventListener('keydown', function (e) {
-
-    console.log(e);
-
     if (e.code === 'Tab') {
         e.preventDefault();
         texarea.value += '    ';
@@ -438,7 +458,7 @@ keyboard.addEventListener('mousedown', function (e) {
     if (elem.id === 'Delete') {
         e.preventDefault();
         let str = texarea.value;
-         texarea.value = str.substring(0, str.length - 1);
+        texarea.value = str.substring(0, str.length - 1);
     };
 });
 
