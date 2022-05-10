@@ -387,7 +387,6 @@ keyboard.addEventListener('mouseup', function (e) {
 
 // =========== change language =======================
 
-
 window.addEventListener('keydown', function (e) {
     if (e.code === 'AltLeft') {
         e.preventDefault();
