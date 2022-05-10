@@ -53,7 +53,7 @@ if (localStorage.getItem('sessionKeyBoard')) {
     currentLocation = JSON.parse(localStorage.getItem('sessionKeyBoard'));
     reRender(currentLocation);
 } else {
-    reRender();
+    renderKeyboard();
 };
 
 function listenerLocakStorage() {
