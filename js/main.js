@@ -202,14 +202,6 @@ function createRow(id) {
 function reRender(langLocation, localizationKey = 'default') {
     let listKey = document.querySelectorAll('.key');
 
-    /*     let capsLock = document.querySelector('#CapsLock').classList.contains('acitve');
-        console.log(capsLock);
-        let localizationKey = 'default';
-        
-        if(capsLock) {
-            localizationKey = 'shift';
-        }  */
-
     listKey.forEach((elem) => {
         let keyCode = elem.id;
         elem.innerHTML = langLocation[keyCode][localizationKey];
@@ -260,9 +252,10 @@ keyboard.addEventListener('mouseout', function (e) {
         e.target.style.backgroundColor = '';
         e.target.style.fontWeight = '';
     };
-    if (e.target.classList.contains('key') && e.target.classList.contains('active')) {
+   if (e.target.classList.contains('key') && e.target.classList.contains('active')) {
+       if(e.target.id === 'CapsLock') return;
         e.target.classList.remove('active');
-    }
+    } 
 });
 
 
@@ -276,7 +269,7 @@ window.addEventListener('keydown', function (e) {
         return;
     };
 
-    virtualKeyboardKey.classList.add('active');
+    virtualKeyboardKey.classList.add('active'); //===============
 });
 
 window.addEventListener('keyup', function (e) {
@@ -287,7 +280,7 @@ window.addEventListener('keyup', function (e) {
         return;
     };
 
-    virtualKeyboardKey.classList.remove('active');
+    virtualKeyboardKey.classList.remove('active'); //=====================
 });
 
 // event virtual keyboard ================================
