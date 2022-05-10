@@ -401,7 +401,7 @@ window.addEventListener('keydown', function (e) {
             currentLocation = engLocation;
         }
         if (capsLock.classList.contains('active')) {
-            reRender(currentLocation, 'shift');
+            reRender(currentLocation, 'caps');
         } else {
             reRender(currentLocation);
         };
