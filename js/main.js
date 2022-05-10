@@ -29,6 +29,8 @@ h3.style.textAlign = 'center';
 h3.style.marginTop = '50px';
 body.append(h3);
 
+// ================== textareat input ==================================
+
 keyboard.addEventListener('click', function (event) {
     let elem = event.target;
     if (elem.id === 'CapsLock') return;
@@ -44,6 +46,27 @@ keyboard.addEventListener('click', function (event) {
         texarea.focus();
         texarea.value += elem.innerHTML;
     }
+});
+
+window.addEventListener('keydown', (e) => {
+    
+    let realKey = e.code;
+    let virtualKeyboardKey =  document.querySelector(`#${e.code}`);
+
+    if (realKey === 'Tab') return;
+    if (realKey === 'CapsLock') return;
+    if (realKey === 'MetaLeft') return;
+    if (realKey === 'Enter') return;
+    if (realKey === 'Backspace') return;
+    if (realKey === 'Delete') return;
+    if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') return;
+    if (realKey === 'ControlLeft' || realKey === 'ControlRight') return;
+    if (realKey === 'AltLeft' || realKey === 'AltRight') return;
+
+    if(realKey === virtualKeyboardKey.id) {
+        e.preventDefault();
+    }
+    texarea.value += virtualKeyboardKey.innerHTML;
 });
 
 // ============== Local Storage =========================================
@@ -269,7 +292,7 @@ window.addEventListener('keydown', function (e) {
         return;
     };
 
-    virtualKeyboardKey.classList.add('active'); //===============
+    virtualKeyboardKey.classList.add('active'); 
 });
 
 window.addEventListener('keyup', function (e) {
@@ -280,7 +303,7 @@ window.addEventListener('keyup', function (e) {
         return;
     };
 
-    virtualKeyboardKey.classList.remove('active'); //=====================
+    virtualKeyboardKey.classList.remove('active'); 
 });
 
 // event virtual keyboard ================================
@@ -319,7 +342,7 @@ window.addEventListener('keydown', function (e) {
         virtualKeyboardKey.classList.toggle('active');
     };
 
-    if (realKey === 'CapsLock' && virtualKeyboardKey.classList.contains('active')) {
+    if (virtualKeyboardKey.classList.contains('active')) {
         reRender(currentLocation, 'caps');
     } else {
         reRender(currentLocation, 'default')
@@ -342,17 +365,19 @@ keyboard.addEventListener('mousedown', function (e) {
 //======== shift active =============
 
 window.addEventListener('keydown', function (e) {
-    let realKey = e.code;
-    if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') {
+    let virtualKeyboardKey =  document.querySelector(`#${e.code}`);
+
+    if(virtualKeyboardKey.id === 'ShiftLeft' || virtualKeyboardKey.id  === 'ShiftRight') {
         reRender(currentLocation, 'shift')
-    };
+    }
 });
 
 window.addEventListener('keyup', function (e) {
-    let realKey = e.code;
-    if (realKey === 'ShiftLeft' || realKey === 'ShiftRight') {
+    let virtualKeyboardKey =  document.querySelector(`#${e.code}`);
+
+    if(virtualKeyboardKey.id === 'ShiftLeft' || virtualKeyboardKey.id  === 'ShiftRight') {
         reRender(currentLocation, 'default')
-    };
+    }
 });
 
 keyboard.addEventListener('mousedown', function (e) {
