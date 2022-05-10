@@ -1,9 +1,3 @@
-
-//Используется ESLint
-// css animation button при нажатии и отпускании 
- 
-//* shift + capsLock
-
 import { engLocation, rusLocation } from "./keys.js";
 
 const body = document.querySelector('body');
@@ -29,7 +23,6 @@ let keyboard = document.createElement('div');
 keyboard.classList.add('keyboard');
 body.append(keyboard);
 
-
 const h3 = document.createElement('h3');
 h3.innerHTML = "Для переключения языка комбинация: левыe ctrl + alt";
 h3.style.textAlign = 'center';
@@ -53,9 +46,7 @@ keyboard.addEventListener('click', function (event) {
     }
 });
 
-
 // ============== Local Storage =========================================
-
 
 if (localStorage.getItem('sessionKeyBoard')) {
     renderKeyboard();
@@ -63,11 +54,11 @@ if (localStorage.getItem('sessionKeyBoard')) {
     reRender(currentLocation);
 } else {
     renderKeyboard();
-}
+};
 
 function listenerLocakStorage() {
     localStorage.setItem('sessionKeyBoard', JSON.stringify(currentLocation));
-}
+};
 
 // ================================ render virtualKeyBoard ==============
 
@@ -196,14 +187,14 @@ function renderKeyboard() {
             i++;
         }
     }
-}
+};
 
 function createRow(id) {
     let row = document.createElement('div');
     row.classList.add('row');
     row.setAttribute('id', `${id}`);
     keyboard.append(row);
-}
+};
 
 
 //===================== function rerender ===================
@@ -244,14 +235,14 @@ function reRender(langLocation, localizationKey = 'default') {
         }
     });
 
-}
+};
 
 reRender(currentLocation);
 
 // ============== disable text selection =============== ============
 const disableselect = (e) => {
     return false
-}
+};
 keyboard.onselectstart = disableselect
 keyboard.onmousedown = disableselect
 
@@ -462,28 +453,3 @@ keyboard.addEventListener('mousedown', function (e) {
 });
 
 
-
-
-
-// разобраться с локализацией, менять innerHTML при переходе на другой язык
-// на мышь mouseUp mouseDown  KeyUp KeyDown
-//keyboard.addEventListener('keydown'){} // добавили класс актив
-//keyup убрали класс эктив на shift
-// =======================  event.keyCode === elem.id   чтобы класс актив клавиша была круглой
-
-
-//добавить в локализацию CapsLock => Caps   если зажаты шифт и капслок то отображает маленькие буквы
-// когда вызываем функцию rerender смотрим нажат ли 1.shift + caps, 2.shift, 3.caps
-
-
-//определение нажатия shift ctr caps
-// 1. в event
-// 2. прописываем через класс active
-//
-
-
-// 1. при нажатии на клавишу добавлять класс active
-// 2. пеереключение языка
-// 3. shift
-// 4. caps
-// 5 shift + caps 
